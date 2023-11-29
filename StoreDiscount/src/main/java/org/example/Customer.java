@@ -4,30 +4,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
-
-    private boolean IsAffiliate;
+    private String name;
     private Card card;
     private List<Item> items; // List of items associated with the customer
 
     //Constructor
-    public Customer(Boolean IsAffiliate,Card card) {
-        this.IsAffiliate = IsAffiliate;
+    public Customer(String name, Card card) {
+        this.name = name;
         this.card = card;
         this.items = new ArrayList<>();
     }
 
-    public boolean getAffiliate(){
-        return IsAffiliate;
-    }
-    public void setAffiliate(Boolean IsAffiliate) {
-        this.IsAffiliate = IsAffiliate;
+    public String getName() {
+        return name;
     }
 
-    public void addItems(Item item) {
+    public void setName(String name) {
+        this.name = name;
+    }
+    public Card getCard() {
+        return card;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
+    }
+
+    public void addItem(Item item) {
         items.add(item);
     }
 
     public List<Item> getItems() {
         return items;
     }
+
 }
