@@ -8,11 +8,14 @@ public class Customer {
     private Card card;
     private List<Item> items; // List of items associated with the customer
 
+    private int years;
+
     //Constructor
-    public Customer(String name, Card card) {
+    public Customer(String name, Card card, int years) {
         this.name = name;
         this.card = card;
         this.items = new ArrayList<>();
+        this.years = years;
     }
 
     public String getName() {
@@ -36,6 +39,14 @@ public class Customer {
 
     public List<Item> getItems() {
         return items;
+    }
+
+    public int getYears() {
+        return years;
+    }
+
+    public void setYears(int years) {
+        this.years = years;
     }
 
 }
