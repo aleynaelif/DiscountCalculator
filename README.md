@@ -36,24 +36,29 @@ How to Run
 Clone the repository:
 ```bash
 git clone <repository_url>
+```bash
 
 Navigate to the project directory:
 ```bash
 cd retail-application
+```bash
 
 Compile the project:
 ```bash
 mvn compile
+```bash
 
 Run the main application:
 ```bash
 mvn exec:java -Dexec.mainClass="org.example.Main"
+```bash
 
 Running Tests
 The project includes JUnit tests to verify the functionality of classes. To run the tests:
 
 ```bash
 mvn test
+```bash
 
 
 Additional Notes
