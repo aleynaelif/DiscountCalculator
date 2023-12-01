@@ -27,40 +27,6 @@ Includes test cases to check if the customer creation and item association work 
 
 
 
-Prerequisites
-Java 8 or higher installed
-Maven installed
-
-How to Run
-
-Clone the repository:
-```bash
-git clone <repository_url>
-```bash
-
-Navigate to the project directory:
-```bash
-cd retail-application
-```bash
-
-Compile the project:
-```bash
-mvn compile
-```bash
-
-Run the main application:
-```bash
-mvn exec:java -Dexec.mainClass="org.example.Main"
-```bash
-
-Running Tests
-The project includes JUnit tests to verify the functionality of classes. To run the tests:
-
-```bash
-mvn test
-```bash
-
-
 Additional Notes
 Ensure that the necessary dependencies are downloaded by Maven before executing any commands.
 Modify the input data or expand the test cases in CustomerTest.java to further validate the application's behavior.
