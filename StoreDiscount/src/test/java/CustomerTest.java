@@ -53,16 +53,11 @@ public class CustomerTest {
 
 
         // Calculate and display total price for each customer
-        calculateAndDisplayTotalPrice(johnWithGoldenCard);
-        calculateAndDisplayTotalPrice(aliceWithSilverCard);
-        calculateAndDisplayTotalPrice(bobWithAffiliateCard);
-        calculateAndDisplayTotalPrice(lilyWithNoCard);
+        DiscountCalculator.displayItemsForCustomer(johnWithGoldenCard);
+        DiscountCalculator.displayItemsForCustomer(aliceWithSilverCard);
+        DiscountCalculator.displayItemsForCustomer(bobWithAffiliateCard);
+        DiscountCalculator.displayItemsForCustomer(lilyWithNoCard);
     }
 
-    static void calculateAndDisplayTotalPrice(Customer customer) {
-        DiscountCalculator.displayItemsForCustomer(customer);
-        double totalPrice = DiscountCalculator.calculateTotalPrice(customer);
-        System.out.println("Total price for " + customer.getName() + ": $" + totalPrice +"\n");
 
-    }
 }

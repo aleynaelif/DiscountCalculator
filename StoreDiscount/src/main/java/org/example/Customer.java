@@ -9,7 +9,6 @@ public class Customer {
     private int years;
     private List<Item> items; // List of items associated with the customer
 
-
     //Constructor
     public Customer(String name, Card card, int years) {
         this.name = name;
