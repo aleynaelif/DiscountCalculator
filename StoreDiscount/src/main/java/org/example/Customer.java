@@ -32,4 +32,7 @@ public class Customer {
     public void addItem(Item item) { items.add(item); }
 
     public List<Item> getItems() { return items; }
+
+
+
 }

@@ -1,15 +1,25 @@
 package org.example;
 
 public class Item {
+
+    private String name;
     private double price;
     private boolean isPhone; // Indicates if the item is a phone
 
-    public Item(double price, boolean isPhone) {
+    public Item(String name, double price, boolean isPhone) {
+        this.name = name;
         this.price = price;
         this.isPhone = isPhone;
     }
 
-    // Getter and setter for price
+    public String  getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public double getPrice() {
         return price;
     }
@@ -18,7 +28,6 @@ public class Item {
         this.price = price;
     }
 
-    // Getter and setter for isPhone
     public boolean isPhone() {
         return isPhone;
     }

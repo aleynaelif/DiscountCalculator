@@ -5,10 +5,8 @@ import java.util.List;
 import static org.example.Constants.*;
 
 public class DiscountCalculator {
-    public static double calculateDiscount(Item item, DiscountContext context) {
+    public static double calculateDiscount(Item item, Customer customer) {
         double discountPercentage = 1.0;
-
-        Customer customer = context.getCustomer();
 
         if(!item.isPhone()) {    // Check if the items contain a phone and if so, do not apply the percentage discount
 
@@ -19,7 +17,7 @@ public class DiscountCalculator {
                 discountPercentage = SILVER_DISCOUNT_PERCENTAGE;
             } else if (AFFILIATE.equals(customer.getCard().getCardType())) {
                 discountPercentage = AFFILIATE_DISCOUNT_PERCENTAGE; // 10% discount for affiliates
-            } else if(NO_CARD.equals(customer.getCard().getCardType()) && context.getCustomer().getYears() >= DISCOUNT_YEAR_LIMIT){
+            } else if(NO_CARD.equals(customer.getCard().getCardType()) && customer.getYears() >= DISCOUNT_YEAR_LIMIT){
                 discountPercentage = YEAR_DISCOUNT_PERCENTAGE;
             }
         }
@@ -35,26 +33,25 @@ public class DiscountCalculator {
         return totalPrice;
     }
 
-    public static double calculateTotalPrice(DiscountContext context) {
+    public static double calculateTotalPrice(Customer customer) {
         double totalPrice = 0.0;
 
         // Calculate the total price of items
-        List<Item> items = context.getItems();
+        List<Item> items = customer.getItems();
         for (Item item : items) {
-            totalPrice += calculateDiscount(item, context) * item.getPrice();
+            totalPrice += calculateDiscount(item, customer) * item.getPrice();
         }
 
         totalPrice = calculateAdditionalDiscount(totalPrice);
 
-        // Apply discount using the Card's calculateDiscount method
         return totalPrice;
     }
 
-    static void displayItemsForCustomer(DiscountContext context) {
-        System.out.println("Items associated with " + context.getCustomer().getName() + ":");
-        List<Item> items = context.getCustomer().getItems();
+    static void displayItemsForCustomer(Customer customer) {
+        System.out.println("Items associated with " + customer.getName() + ":");
+        List<Item> items = customer.getItems();
         for (Item item : items) {
-            System.out.println("Price: $" + item.getPrice() + ", Phone: " + item.isPhone());
+            System.out.println("Price: $" + item.getPrice() + ", Name: " + item.getName());
         }
         System.out.println();
     }
