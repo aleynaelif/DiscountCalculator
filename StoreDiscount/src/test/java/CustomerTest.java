@@ -38,18 +38,13 @@ public class CustomerTest {
 
 
         // Assertions to check the created customers and their items
-        assertEquals("John", johnWithGoldenCard.getName());
-        assertEquals(2, johnWithGoldenCard.getItems().size()); // Check the number of items for John
+        assertEquals(560, DiscountCalculator.calculateTotalPrice(johnWithGoldenCard),0.0);
 
-        assertEquals("Alice", aliceWithSilverCard.getName());
-        assertEquals(1, aliceWithSilverCard.getItems().size()); // Check the number of items for Alice
+        assertEquals(80.0, DiscountCalculator.calculateTotalPrice(aliceWithSilverCard),0.0);
 
-        assertEquals("Bob", bobWithAffiliateCard.getName());
-        assertTrue(bobWithAffiliateCard.getItems().contains(phoneItem)); // Check if Bob has phoneItem
-        assertTrue(bobWithAffiliateCard.getItems().contains(bookItem)); // Check if Bob has bookItem
+        assertEquals(665.0, DiscountCalculator.calculateTotalPrice(bobWithAffiliateCard),0.0);
 
-        assertEquals("Lily", lilyWithNoCard.getName());
-        assertTrue(lilyWithNoCard.getItems().contains(bookItem)); // Check if Lily has bookItem
+        assertEquals(195.0, DiscountCalculator.calculateTotalPrice(lilyWithNoCard),0.0);
 
 
         // Calculate and display total price for each customer
