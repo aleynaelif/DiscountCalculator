@@ -20,19 +20,13 @@ public class Item {
         this.name = name;
     }
 
-    public double getPrice() {
-        return price;
-    }
+    public double getPrice() { return price; }
 
     public void setPrice(double price) {
         this.price = price;
     }
 
-    public boolean isPhone() {
-        return isPhone;
-    }
+    public boolean isPhone() { return isPhone; }
 
-    public void setPhone(boolean phone) {
-        isPhone = phone;
-    }
+    public void setPhone(boolean phone) { isPhone = phone; }
 }
